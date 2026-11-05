@@ -1,6 +1,4 @@
-# Apache Kafka: A Technical Overview
-
-*A short technical paper written in simple language*
+# Apache Kafka:
 
 ## 1. Introduction
 
@@ -22,7 +20,6 @@ The main idea is simple. One program writes events to Kafka. Other programs read
 - **Offset:** a number given to each event in a partition. A consumer remembers its offset so it can continue from the same place after a restart.
 - **Consumer group:** consumers that share the work of reading a topic. Each partition goes to only one consumer in the group.
 
-Producers and consumers do not know about each other. This makes big systems much easier to change.
 
 ## 3. How Kafka Stores and Moves Data
 
@@ -38,7 +35,6 @@ Kafka also uses these ideas to stay fast:
 - It can compress the batches.
 - It uses the operating system's memory cache.
 
-For delivery, Kafka offers three levels: at most once (may be lost), at least once (may be repeated), and exactly once (one time only). Exactly once is the safest but a little slower.
 
 ## 4. Staying Safe When Machines Fail
 
@@ -54,7 +50,6 @@ A producer can also choose how sure it wants to be, using the acks setting:
 - **acks=1:** wait for the leader only.
 - **acks=all:** wait for all up-to-date copies. Safest.
 
-Older Kafka versions needed a tool called ZooKeeper to manage the cluster. Newer versions use a built-in system called KRaft, which is simpler to run.
 
 ## 5. Uses, Strengths and Limits
 
